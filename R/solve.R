@@ -1,6 +1,6 @@
 solve <- function(boxsize) {
-  sd$solve_as_CP(list(), boxsize) %>%
+  sdk$solve_as_CP(list(), boxsize) %>%
     as.numeric() %>%
-    matrix(nrow = sd$n_rows(boxsize), ncol = sd$n_cols(boxsize))
+    matrix(nrow = sdk$n_rows(boxsize), ncol = sdk$n_cols(boxsize))
 }
 

@@ -1,0 +1,44 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  message = FALSE,
+  warning = FALSE,
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-"
+)
+```
+# rudoku
+
+An R package wrapping the Python Sudoku package.
+
+## Installation
+
+You can install rudoku from github with:
+
+```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("MHenderson/rudoku")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(rudoku)
+library(tidyverse)
+
+solve(3) %>%
+  reshape2::melt() %>%
+  ggplot(aes(x = Var1, y = Var2, fill = as.factor(value))) + 
+    geom_tile(alpha = 0.8) +
+    scale_fill_brewer(palette = "Set3", guide = FALSE) +
+    theme_void() +
+    theme(legend.position = "none")
+```
